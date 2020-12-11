@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>React createElement</title>
+<script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+<script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+<script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+<style>
+  .content {
+    color: #0070cc;
+  }
+</style>
+</head>
+<body>
+	<div id="root"></div>
+  <script type="text/babel">
+    const child1 = React.createElement('li', { key: 'first' }, '无序列表1');
+    const child2 = React.createElement('li', { key: 'second' }, '无序列表2');
+    const box = React.createElement(
+      'ul',
+      { className: 'content' },
+      [child1, child2],
+    );
+    ReactDOM.render(box, document.getElementById('root'));
+  </script>
+  
+  <script>
+    // 通过一个官网上的DEMO来实际的理解一下
+    // JSX写法
+    class Hello extends React.Component {
+      render() {
+        return <div>Hello, { this.props.toWhat }</div>
+      }
+    }
+    ReactDOM.render(
+      <Hello toWhat="world" />,
+      document.getElementById('root'),
+    );
+
+    // 转换成原生js语法
+    class Hello extends React.Component {
+      render(){
+        return React.createElement('div', null, `Hello,${this.props.toWhat}`)
+      }
+    }
+    ReactDOM.render(Hello, document.getElementById('root'));
+  </script>
+</body>
+</html>

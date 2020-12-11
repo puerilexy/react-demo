@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>React cloneElement</title>
+<script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+<script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+<script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+<style>
+  .content {
+    color: #0070cc;
+  }
+</style>
+</head>
+<body>
+	<div id="root"></div>
+  <script type="text/babel">
+    const child1 = React.cloneElement(<span>这是个div</span>, null, 'span');
+
+    const box = React.cloneElement(
+      <div className="cont">这是wrapper</div>,
+      { className: 'content', key: 'wrapper' }, // className 覆盖上面的cont
+      [child1], // child1替换div里的‘这是wrapper’
+    );
+    ReactDOM.render(box, document.getElementById('root'));
+  </script>
+</body>
+</html>
