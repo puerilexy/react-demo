@@ -1,3 +1,4 @@
+### ReactDOM.render
 ReactDOM.render 是 React 的最基本方法用于将模板转为 HTML 语言，并插入指定的 DOM 节点。
 
 ReactDOM.render(element,container, [,callback]) 方法接收两个必选参数，一个可选参数：
