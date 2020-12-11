@@ -11,14 +11,14 @@
   <div id="root"></div>
   <div id="box"></div>
   <script type="text/babel">
-    const ELement = React.createElement(
+    const Element = React.createElement(
       'div', { className: 'content' }, 'createElement'
     );
 
-    const cloneElement = React.cloneElement(ELement, null, '这是cloneElement');
+    const cloneElement = React.cloneElement(Element, null, '这是cloneElement');
 
     ReactDOM.render(
-      ELement,
+      Element,
       document.getElementById('root'),
     );
 
