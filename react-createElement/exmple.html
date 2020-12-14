@@ -7,6 +7,13 @@
 <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
 <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
 </head>
+<style>
+  .content {
+    text-align: center;
+    font-size: 24px;
+    color: #0f0f0f;
+  }
+</style>
 <body>
   <div id="root"></div>
   <div id="box"></div>
@@ -15,6 +22,7 @@
       'div', { className: 'content' }, 'createElement'
     );
 
+    // 只改变element内容，复用样式
     const cloneElement = React.cloneElement(Element, null, '这是cloneElement');
 
     ReactDOM.render(
